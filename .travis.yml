@@ -15,7 +15,7 @@ script:
              -v "${outputDir}/":/output/ \
              -e TRAVIS_COMMIT=$TRAVIS_COMMIT \
              -e TRAVIS_REPO_SLUG=$TRAVIS_REPO_SLUG \
-             -t -i thomasweise/docker-bookbuilder book.md GiovannelliLab_protocols_ &&\
+             -t -i thomasweise/docker-bookbuilder *.md GiovannelliLab_protocols_ &&\
   cd "${outputDir}"
 
 deploy:

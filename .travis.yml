@@ -8,14 +8,14 @@ services:
 script:
 - |
   baseDir="$(pwd)" &&\
-  inputDir="${baseDir}/book" &&\
-  outputDir="${baseDir}/output" &&\
+  inputDir="${baseDir}" &&\
+  outputDir="${baseDir}/pdf" &&\
   mkdir -p "${outputDir}" &&\
   docker run -v "${inputDir}/":/input/ \
              -v "${outputDir}/":/output/ \
              -e TRAVIS_COMMIT=$TRAVIS_COMMIT \
              -e TRAVIS_REPO_SLUG=$TRAVIS_REPO_SLUG \
-             -t -i thomasweise/docker-bookbuilder book.md YOUR_BOOK_OUTPUT_BASENAME &&\
+             -t -i thomasweise/docker-bookbuilder book.md GiovannelliLab_protocols_ &&\
   cd "${outputDir}"
 
 deploy:

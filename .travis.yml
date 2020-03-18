@@ -1,1 +1,29 @@
-xx
+sudo: required
+
+language: generic
+
+services:
+  - docker
+
+script:
+- |
+  baseDir="$(pwd)" &&\
+  inputDir="${baseDir}/book" &&\
+  outputDir="${baseDir}/output" &&\
+  mkdir -p "${outputDir}" &&\
+  docker run -v "${inputDir}/":/input/ \
+             -v "${outputDir}/":/output/ \
+             -e TRAVIS_COMMIT=$TRAVIS_COMMIT \
+             -e TRAVIS_REPO_SLUG=$TRAVIS_REPO_SLUG \
+             -t -i thomasweise/docker-bookbuilder book.md YOUR_BOOK_OUTPUT_BASENAME &&\
+  cd "${outputDir}"
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: false
+  on:
+    branch: master
+  target-branch: master
+  local-dir: output

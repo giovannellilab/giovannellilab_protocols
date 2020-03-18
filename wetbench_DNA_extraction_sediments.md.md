@@ -51,7 +51,7 @@
 12.  Add 1 vol of Chloroform:IAA. Invert 100 times or until emulsion forms
 13. Centrifuge 3’ @ 14,000 xg. Recover aqueous phase (generally top phase) to clean 2 ml tube
 14. Add 0.1 vol of Na-Acetate and 0.7 vol of Isopropanol. Invert several time and incubate. Incubation can be carried out overnight @ Room Temperature or +4°C or for a shorter amount of time (2h @ -20°C) depending on the sample and expected output
-15. Centrifuge 30’ @ 14,000 xg @ 4˚C. Carefully remove supernatant
+15. Centrifuge 30’ @ 14,000 xg @ 4°C. Carefully remove supernatant
 16. Add 0.5 ml of EtOH 70% ice cold and Invert tube several times
 17.  Centrifuge 5’ @ 14,000 xg. Carefully remove supernatant. Air dry for ca. 20’ or speedvac for 5’
 18. Resuspend in 50 µl of Tris buffer or PCR grade water and transfer in clean 1.5 ml tube

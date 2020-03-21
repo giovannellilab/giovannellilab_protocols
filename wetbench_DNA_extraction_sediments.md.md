@@ -1,8 +1,8 @@
-> type: 		_wetbench_
-> name:		wetbench-DNA_extraction_sediments.md
-> author:	Donato Giovannelli
-> created:	18032020
-> 
+![wetbench](https://img.shields.io/badge/TYPE-wet_bench-brigthgreen)
+![author](https://img.shields.io/badge/AUTHOR-Donato_Giovannelli-ad7fa8)
+![created](https://img.shields.io/badge/created-16032020-lightgray)
+[![giovannellilab](https://img.shields.io/badge/BY-Giovannelli_Lab-blue)](http://dgiovannelli.github.io)
+
  <img src="https://dgiovannelli.github.io//images/logopic/giovannellilab.png" width="100 px">
  
 # Extended protocol name

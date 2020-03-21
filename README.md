@@ -22,7 +22,7 @@ We make a point of making a release of the laboratory protocols each time new pr
 The protocols found on this repository and wiki are provided "as is", without warranty of any kind, express or implied. It is your responsibility to check that the protocol works as expected for the intended use.
 
 ## Licence
-The protocols are released under a Creative Common CC0 1.0 Universal (CC0 1.0) Public Domain Dedication. You do not need to link back to us or give credit in any way if you use our protocols, but of course, citing the DOI of the Giovannelli Lab Protocols release or the relevant paper where you have found the protocol is greatly appreciated!
+The protocols are released under a [Creative Common CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://github.com/giovannellilab/protocols/blob/master/LICENSE). You do not need to link back to us or give credit in any way if you use our protocols, but of course, citing the DOI of the Giovannelli Lab Protocols release or the relevant paper where you have found the protocol is greatly appreciated!
 
 ## Credits
 If you decide to cite us, besides the specific paper where you have found the protocol you have been using please cite:

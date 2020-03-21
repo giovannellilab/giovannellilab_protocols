@@ -5,7 +5,7 @@
 
  <img src="https://dgiovannelli.github.io//images/logopic/giovannellilab.png" width="100 px">
  
-# Extended protocol name
+# DNA Extraction from Sediments or Soils
 
 **OBJ**: Extracting total high molecular weight DNA from sediments and soils samples. The protocols with small modifications can be applied to other solids such as rocks and minerals
 

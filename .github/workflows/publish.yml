@@ -1,0 +1,5 @@
+- name: Publish to GitHub Wiki
+  uses: SwiftDocOrg/github-wiki-publish-action@1.0.0
+  with:
+    # A path to the directory of files to publish
+    path: protocols

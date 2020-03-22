@@ -1,22 +1,7 @@
 site_name: Giovannelli Lab protocols
 site_description: 'Protocols used in the Giovannelli Lab'
-
-theme:
-    name: rtd-dropdown
-    # Default settings
-    collapse_by_default: false
-    highlightjs: true
-    hljs_languages:
-        - yaml
-        - django
-
-repo_url: https://github.com/cjsheets/readthedocs-dropdown
-
 nav:
     - MkDocs: index.md
     - wet bench:
         - DNA: wetbench_DNA_extraction_sediments.md
-
-
-extra_css:
-    - css/extra.css
+theme: readthedocs

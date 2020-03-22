@@ -5,3 +5,4 @@ nav:
     - wet bench:
         - DNA extraction from sediments: wetbench_DNA_extraction_sediments.md
 theme: readthedocs
+formats: all

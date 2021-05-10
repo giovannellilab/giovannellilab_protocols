@@ -5,10 +5,8 @@
 
 ### **PROTOCOL FOR ANTIBIOGRAM TEST**
 
-McFarland protocol is adapted from https://pdf4pro.com/amp/view/mcfarland-standard-dalynn-f76d0.html
-Antibiogram is adapted from Matuschek et al., 2014 (DOI: https://doi.org/10.1111/1469-0691.12373)
-
-Monica Correggia - Matteo Selci
+ - McFarland protocol is adapted from https://pdf4pro.com/amp/view/mcfarland-standard-dalynn-f76d0.html
+- Antibiogram is adapted from Matuschek et al., 2014 (DOI: https://doi.org/10.1111/1469-0691.12373)
 
 **MATERIALS:**
 - plate 90mm

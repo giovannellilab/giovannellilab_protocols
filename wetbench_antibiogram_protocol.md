@@ -1,6 +1,6 @@
 ![wetbench](https://img.shields.io/badge/TYPE-wet_bench-brigthgreen)
-![author](https://img.shields.io/badge/Matteo_Selci_Monica_Correggia-ad7fa8)
-![created](https://img.shields.io/badge/created-ddmmyyyy-lightgray)
+![author](https://img.shields.io/badge/Monica_Correggia,_Matteo_Selci-ad7fa8)
+![created](https://img.shields.io/badge/created-07/07/2020-lightgray)
 [![giovannellilab](https://img.shields.io/badge/BY-Giovannelli_Lab-blue)](http://dgiovannelli.github.io)
 
 ### **PROTOCOL FOR ANTIBIOGRAM TEST**
@@ -9,7 +9,6 @@ McFarland protocol is adapted from https://pdf4pro.com/amp/view/mcfarland-standa
 Antibiogram is adapted from Matuschek et al., 2014 (DOI: https://doi.org/10.1111/1469-0691.12373)
 
 Monica Correggia - Matteo Selci
-01/07/2020
 
 **MATERIALS:**
 - plate 90mm

@@ -18,7 +18,7 @@ Calibration to determinate Ammonia concentration from a standard solution (NH4Cl
 #### Equipment
 - Spectrophotometer UV-VIS
 - Chemical hood
-- Pipette 1000 µL and 100 µL
+- Pipette 1000 uL and 100 uL
 
 #### Solutions
 - **Nessler reagent** (**TOXIC**) 

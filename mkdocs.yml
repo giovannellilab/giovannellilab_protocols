@@ -1,7 +1,7 @@
 site_name: Giovannelli Lab protocols
 site_description: 'Protocols used in the Giovannelli Lab'
 nav:
-    - MkDocs: index.md
+    - Giovannelli Lab Protocols: index.md
     - wet bench:
         - DNA extraction from sediments: wetbench_DNA_extraction_sediments.md
 theme: readthedocs

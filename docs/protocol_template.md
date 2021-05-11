@@ -4,14 +4,16 @@
 ![author](https://img.shields.io/badge/AUTHOR-name_lastname-ad7fa8)
 ![created](https://img.shields.io/badge/created-ddmmyyyy-lightgray)
 [![giovannellilab](https://img.shields.io/badge/BY-Giovannelli_Lab-blue)](http://dgiovannelli.github.io)
- 
+
  <img src="https://dgiovannelli.github.io//images/logopic/giovannellilab.png" width="100 px">
- 
+
 # Extended protocol name
 
 **OBJ**: Protocol objective
 
 >***Duration: protocol duration goes here***
+
+> ***Adapted from: add reference here***
 
 #### Materials
 - list all the material
@@ -27,6 +29,7 @@
 2. Include all informations about incubation times and temperature and instrument steps like:  Centrifuge 10' @ 7000 rpm
 3. Don't forget to add information on the storage and data collection if needed
 4. Save the protocol with a meaningful name. We have a basic division of protocols starting with a Wetbench/Field/InSilico division, followed by the area (such as MolBiol, Biochem, Cultures, Geochem) and by the name. For example a protocol for extracting DNA from sediment will be named Wetbench_MolBiol_SedimentDNA.md and a protocol for preserving fluid samples in the filed will be Field_MolBiol_FluidPreservation.md
+5. Current categories are **MolBiol**, **Biochem**, **Cultures**, **Geochem**
 
 ## Expected results (quantitative information, graphics, images)
 Describe the expected results and if possible include a visual example (i.e. a picture, table or graph)

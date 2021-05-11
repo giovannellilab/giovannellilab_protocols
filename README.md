@@ -17,7 +17,7 @@
 The protocol collection gets periodically updated, however, the latest version of each protocol can be found on our read-the-docs page at [giovannelli-lab-protocols.readthedocs.io](https://giovannelli-lab-protocols.readthedocs.io/en/latest/). We also make regular releases of our entire protocol folder. You can find the latest release on the [release page of the repo](https://github.com/giovannellilab/protocols/releases) and following the DOI badge at the top.
 
 ## Supporting our publications
-We make a point of making a release of the laboratory protocols each time new protocols are added or major changes to a protocol are made. When we finally publish our work, we refer to the specific release of the protocols used for that work. This is an effort to increase reproducibility in science.
+We make a point of making a release of the laboratory protocols each time new protocols are added or major changes to a protocol is made. When we finally publish our work, we refer to the specific release of the protocols used for that work. This is an effort to increase reproducibility in science.
 
 ## Disclaimer
 The protocols found on this repository and wiki are provided "as is", without warranty of any kind, express or implied. It is your responsibility to check that the protocol works as expected for the intended use.
@@ -26,7 +26,7 @@ The protocols found on this repository and wiki are provided "as is", without wa
 The protocols are released under a [Creative Common CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://github.com/giovannellilab/protocols/blob/master/LICENSE). You do not need to link back to us or give credit in any way if you use our protocols, but of course, citing the DOI of the Giovannelli Lab Protocols release or the relevant paper where you have found the protocol is greatly appreciated!
 
 ## Credits
-If you decide to cite us, besides the specific paper where you have found the protocol you have been using please cite:
+If you decide to cite us, besides the specific paper where you have found the protocol please cite also:
 
 *Giovannelli, D and the Giovanelli Lab members. 2020. Digital collection of the wet bench, field and in silico protocols used by the Giovannelli Lab. doi: 10.5281/zenodo.3723306*
 

@@ -12,6 +12,14 @@
 
  <img src="https://dgiovannelli.github.io//images/logopic/giovannellilab.png" width="100 px"> Welcome to the Giovannelli Lab laboratory protocols wiki! You'll find here a growing list of the *wet bench*, *fieldwork* and *in silico* protocols, we use in the Giovannelli Lab at the University of Naples Federico II. You can find more information about our laboratory at the lab website [dgiovannelli.github.io](http://dgiovannelli.github.io).
 
+Each protocol will report if its intended use is in the lab, at the computer or in the filed using a badge system at the top of the page:
+
+![wetbench](https://img.shields.io/badge/TYPE-wet_bench-brigthgreen)
+![field](https://img.shields.io/badge/TYPE-field_protocol-e9b96e)
+![insilico](https://img.shields.io/badge/TYPE-in_silico-d3d7cf)
+
+In addition each protocols report the name of the person that developed it, the date of development and an estimate of the time needed to run a typical sample. For information or clarification regarding protocols found on this page get in touch with us or [open an issue](https://github.com/giovannellilab/giovannellilab_protocols/issues) in the GitHub repository.
+
 ## Latest version of the protocols
 The protocol collection gets periodically updated, however, the latest version of each protocol can be found on our read-the-docs page at [giovannelli-lab-protocols.readthedocs.io](https://giovannelli-lab-protocols.readthedocs.io/en/latest/). We also make regular releases of our entire protocol folder. You can find the latest release on the [release page of the repo](https://github.com/giovannellilab/protocols/releases) and following the DOI badge at the top.
 

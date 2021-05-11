@@ -1,0 +1,283 @@
+#Analisys 2017/2018 16S
+
+library(microbiome) # data analysis and visualisation
+library(phyloseq) # also the basis of data object. Data analysis and visualisation
+library(RColorBrewer) # nice color options
+library(dplyr) # data handling
+library(network) # networks
+library(intergraph)  # networks
+library(GGally)   # network plotting with ggplot
+library(igraph)  # networks
+library(phyloseq) # ASV ecological analysis package
+library(ggplot2) # plotting library
+library(gridExtra) # gridding plots
+library(grid)
+library(ape) # importing and handling phylogenetic trees
+library(ggthemes) # additional themes fro ggplot2
+library(magrittr) #
+library(rioja) # plotting poackages for tabular bubbleplots
+library(ggpubr)
+library(ggtern) # ternary plots for geochemistry
+library(plyr)
+library(coda.base)
+library(tidyverse)
+library(vegan) # Multivariate ecological analysis
+library(propr)
+library(missForest) # Imputing missing values in dataframes using Random Forests
+library(VSURF) 
+
+#separate the OTU names
+#I modify the input data, using excell, for create file with the same OTU ID,  removing the name of the sample.
+# es:  903983095|DCO_LLO_Bv4v5--BRF1_BR170218_1|frequency_10   ->   903983095
+
+otu_table_2017 <- read.table("data/otu_table_2017.csv", sep = ",")
+colnames(otu_table_2017) <- as.character(unlist(otu_table_2017[1,]))
+otu_table_2017 = otu_table_2017[-1, ]
+otu_table_2017 <- sapply(otu_table_2017, function(x) as.numeric(as.character(x)))
+row.names(otu_table_2017) <- as.character(unlist(otu_table_2017[,1]))
+otu_table_2017 = otu_table_2017[,-1]
+
+
+tax_table_2017 <- read.table("data/tax_table_2017.csv", sep = ",")
+colnames(tax_table_2017) <- as.character(unlist(tax_table_2017[1,]))
+row.names(tax_table_2017) <- as.character(unlist(tax_table_2017[,1]))
+tax_table_2017 = tax_table_2017[-1,-1]
+tax_table_2017 = as.matrix(tax_table_2017)
+
+
+otu_table_2018 <- read.table("data/otu_table_2018.csv", sep = ",")
+colnames(otu_table_2018) <- as.character(unlist(otu_table_2018[1,]))
+otu_table_2018 = otu_table_2018[-1, ]
+otu_table_2018 <- sapply(otu_table_2018, function(x) as.numeric(as.character(x)))
+row.names(otu_table_2018) <- as.character(unlist(otu_table_2018[,1]))
+otu_table_2018 = otu_table_2018[,-1]
+
+
+
+tax_table_2018 <- read.table("data/tax_table_2018.csv", sep = ",")
+colnames(tax_table_2018) <- as.character(unlist(tax_table_2018[1,]))
+row.names(tax_table_2018) <- as.character(unlist(tax_table_2018[,1]))
+tax_table_2018 = tax_table_2018[-1,-1]
+tax_table_2018 = as.matrix(tax_table_2018)
+
+#now merging only the phyloseq object with otu table and taxonomic identification
+bac_data_merged_2017 <- phyloseq(otu_table(otu_table_2017, taxa_are_rows = TRUE), tax_table(tax_table_2017))
+bac_data_merged_2018 <- phyloseq(otu_table(otu_table_2018, taxa_are_rows = TRUE), tax_table(tax_table_2018))
+bac_merged <- merge_phyloseq(bac_data_merged_2017, bac_data_merged_2018)
+colnames(otu_table(bac_merged))
+nrow(otu_table(bac_merged))
+#62849 tot ASV
+#2531 ASV merged between the database
+
+bac_sample <- read.csv("data/sample_table_2017-2018.csv", header = T, sep = ",", stringsAsFactors = F) 
+# the name, the ordere and the number of the samples have to be the same
+rownames(bac_sample)
+nrow(bac_sample)
+#assign the sample(X) names to the raw
+rownames(bac_sample) = bac_sample$X
+bac_merged_env <- merge_phyloseq(bac_merged, sample_data(bac_sample))
+
+
+###################################################################
+#load the trees
+data_tree_2017 <- read_tree("data/data_tree_2017.tre")
+data_tree_2018 <- read_tree("data/data_tree_2018.tre")
+
+#create the two phyloseq objects with tree
+bac_data_2017_tree <- phyloseq(otu_table(otu_table_2017, taxa_are_rows = TRUE), tax_table(tax_table_2017), phy_tree(data_tree_2017))
+  bac_data_2018_tree <- phyloseq(otu_table(otu_table_2018, taxa_are_rows = TRUE), tax_table(tax_table_2018), phy_tree(data_tree_2018))
+
+#prova ottimistica
+bac_merged_tree <- merge_phyloseq(bac_data_2017_tree, bac_data_2018_tree)
+
+#prove usando merge_taxa
+est_tax <- tax_table(bac_data_2017)
+p1 <- merge_taxa(bac_data_2017, taxa_names(bac_data_2017)[3:27], 1)
+#non funziona perche l'oggetto non è phyloseq
+#dopo aver ricreato il phyloseq e poi riestratto il tax_table funziona
+#ma questo comando accorpa soltanto le righe(otu)
+###################################################################
+
+
+#extract and save the file from the phyloseq object
+write.csv(tax_table(bac_merged), file = "data/tax_table_2017-2018.csv")
+write.csv(otu_table(bac_merged), file = "data/otu_table_2017-2018.csv")
+
+length(get_taxa_unique(bac_merged_env, taxonomic.rank = "Genus"))  #1875
+length(get_taxa_unique(bac_merged_env, taxonomic.rank = "Family")) #862
+length(get_taxa_unique(bac_merged_env, taxonomic.rank = "Order"))  #494
+length(get_taxa_unique(bac_merged_env, taxonomic.rank = "Class"))  #216
+length(get_taxa_unique(bac_merged_env, taxonomic.rank = "Phyla"))  #78
+
+readcount(bac_merged_env)
+
+#NORMALIZATION
+bac_data_norm <- transform_sample_counts(bac_merged_env, function(x) ((x / sum(x))*median(readcount(bac_merged_env))))
+readcount(bac_data_norm)   #52193.88
+
+#subset data for type of substrate (sediment-fluid)
+bac_data_sediment <- subset_samples(bac_data_norm, TYPE == "S")
+bac_data_fluid <- subset_samples(bac_data_norm, TYPE == "F")
+
+#prove barplot
+bac_data_phylum = tax_glom(bac_merged, taxrank="Phyla", NArm=FALSE)
+plot_bar(bac_data_phylum, fill = "Phyla")
+
+bac_data_phylum = tax_glom(bac_data_norm, taxrank="Phyla", NArm=FALSE)
+plot_bar(bac_data_phylum, fill = "Phyla")
+
+#plot1 generico
+plot_ordination(bac_data_norm, ordinate(bac_data_norm, "MDS")) + geom_point(size= 0.2) 
+plot_ordination(bac_data_norm, ordinate(bac_data_norm, "NMDS")) + geom_point(size= 0.2) 
+
+
+#####################################################
+## Starting the multivariate ecological analysis
+## PCoA unifrac weighted with relative counts
+bac_pcoa_w <- ordinate(bac_data_norm, method = "PCoA", distance = "unifrac", weighted=T)
+evals_w <- bac_pcoa_w$values$Eigenvalues
+## PCoA unifrac unweighted with relative counts
+bac_pcoa_un <- ordinate(bac_data_norm, method = "PCoA", distance = "unifrac", weighted=F)
+evals <- bac_pcoa_un$values$Eigenvaluesxz 
+#  Error in access(physeq, "phy_tree", errorIfNULL) : 
+#    phy_tree slot is empty.
+####################################################
+
+
+## nMDS with Jaccard and Bray-Curtis distance
+bac_nmds_j <- ordinate(bac_data_norm, method = "NMDS", distance = "jaccard", trymax=100)
+bac_nmds_bc <- ordinate(bac_data_norm, method = "NMDS", distance = "bray", trymax=100)
+bac_nmds_jt <- ordinate(bac_data_norm, method = "NMDS", distance = "jaccard", binary=TRUE)
+bac_nmds_jf <- ordinate(bac_data_norm, method = "NMDS", distance = "jaccard", binary = FALSE)
+
+
+grid.arrange(nrow = 1, ncol=2,
+             plot_ordination(bac_data_norm, bac_nmds_bc, color = "year", shape = "TYPE", title = "NMDS  Bray-Curtis") + geom_point(size= 0.2) + geom_text(mapping = aes(label = code), size = 4, vjust = 1.5),
+             plot_ordination(bac_data_norm, bac_nmds_j, color = "year", shape = "TYPE", title = "NMDS  Jaccard") + geom_point(size= 0.2) + geom_text(mapping = aes(label = code), size = 4, vjust = 1.5)
+)
+
+grid.arrange(nrow = 1, ncol=2,
+             plot_ordination(bac_data_norm, bac_nmds_bc, color = "TYPE", shape = "year", title = "NMDS  Bray-Curtis") + geom_point(size= 0.2) + geom_text(mapping = aes(label = code), size = 4, vjust = 1.5),
+             plot_ordination(bac_data_norm, bac_nmds_j, color = "TYPE", shape = "year", title = "NMDS  Jaccard") + geom_point(size= 0.2) + geom_text(mapping = aes(label = code), size = 4, vjust = 1.5)
+)
+
+grid.arrange(nrow = 1, ncol=2,
+             plot_ordination(bac_data_norm, bac_nmds_jt, color = "year", shape = "TYPE", title = "jaccard  Binary = TRUE") + geom_point(size= 0.2) + geom_text(mapping = aes(label = code), size = 4, vjust = 1.5),
+             plot_ordination(bac_data_norm, bac_nmds_jf, color = "year", shape = "TYPE", title = "jaccard  Binary = FALSE") + geom_point(size= 0.2) + geom_text(mapping = aes(label = code), size = 4, vjust = 1.5)
+)
+
+  #the plot from Bray-curtis and Jaccard are almost the same, but inverted.
+#so I strated to compare the NMDS and MDS graph
+
+
+  #plot generico (year)
+grid.arrange(nrow = 1, ncol=2,
+  plot_ordination(bac_data_norm, ordinate(bac_data_norm, "NMDS"), color = "year", shape = "TYPE", title = "NMDS") + geom_point(size= 0.2) + geom_text(mapping = aes(label = code), size = 4, vjust = 1.5),
+  plot_ordination(bac_data_norm, ordinate(bac_data_norm, "MDS"), color = "year", shape = "TYPE", title = "MDS") + geom_point(size= 0.2) + geom_text(mapping = aes(label = code), size = 4, vjust = 1.5)
+)
+ #plot genrico (long)
+grid.arrange(nrow = 1, ncol=2,
+             plot_ordination(bac_data_norm, ordinate(bac_data_norm, "NMDS"), color = "long", shape = "year", title = "NMDS") + geom_point(size= 0.2) + geom_text(mapping = aes(label = code), size = 4, vjust = 1.5),
+             plot_ordination(bac_data_norm, ordinate(bac_data_norm, "MDS"), color = "long", shape = "year", title = "MDS") + geom_point(size= 0.2) + geom_text(mapping = aes(label = code), size = 4, vjust = 1.5)
+)
+
+
+## Compare ordinations colored by substrate
+#plot w-unw
+grid.arrange(nrow = 1, ncol=2,
+             plot_ordination(bac_data_norm, bac_nmds_j, color="year", shape = "TYPE", title="nMDS Jaccard distances") +  
+               geom_point(size= 0.2) + geom_text(mapping = aes(label = code), size = 3, vjust = 1.5) +
+               theme(legend.position = "none"),
+             plot_ordination(bac_data_norm, bac_nmds_bc, color="year", shape = "TYPE", title="nMDS Bray-Curtis distances") +
+               geom_point(size= 0.2) + geom_text(mapping = aes(label = code), size = 3, vjust = 1.5) +
+               theme(legend.position = "none")
+)
+
+# Transform Bacteria abundance to relative abundances for plotting and some stats
+bac_ra = transform_sample_counts(bac_data_norm, function(x){x / sum(x)})
+
+# Agglomerate at a specific taxonomic level at the Genus level
+
+bac_ra_phyla = tax_glom(bac_ra, "Phyla", NArm = TRUE)
+bac_pha <- data.frame(t(otu_table(bac_ra_phyla))) # Phyla
+# Define environmental vectors to reorder plot
+ph <- as.vector(sample_data(bac_ra_phyla))$ph
+temp <- as.vector(sample_data(bac_ra_phyla))$temp
+trench <- as.vector(sample_data(bac_ra_phyla))$trench
+code <- as.vector(sample_data(bac_ra_phyla))$code
+year <- as.vector(sample_data(bac_ra_phyla))$year
+type <- as.vector(sample_data(bac_ra_phyla))$TYPE
+
+# Plot the bubbleplot for selected taxa and vector
+#svg("inkspot_phyla_ph.svg")
+
+  inkspot(bac_pha, ph, cex.max = 8,
+        cex.axis = 0.3,
+        legend.values =NULL,
+        use.rank = T,
+        x.axis.top = T,
+        spec.names = get_taxa_unique(bac_ra_phyla, "Phyla"),
+        site.names = data.frame(sample_data(bac_ra_phyla))$X,
+        main = "Phyla abundance w/ sites ordered by ph on top axis"
+) # Phyla with sites ordered by ph on top axis
+#dev.off()
+  
+  inkspot(bac_pha, temp, cex.max = 8,
+          cex.axis = 0.3,
+          legend.values =NULL,
+          use.rank = T,
+          x.axis.top = T,
+          spec.names = get_taxa_unique(bac_ra_phyla, "Phyla"),
+          site.names = data.frame(sample_data(bac_ra_phyla))$X,
+          main = "Phyla abundance w/ sites ordered by temp on top axis"
+  ) # Phyla with sites ordered by ph on top axis
+  #dev.off()
+  
+  inkspot(bac_pha, cex.max = 8,
+          cex.axis = 0.3,
+          legend.values =NULL,
+          use.rank = T,
+          x.axis.top = T,
+          spec.names = get_taxa_unique(bac_ra_phyla, "Phyla"),
+          site.names = data.frame(sample_data(bac_ra_phyla))$X,
+          main = "Phyla abundance"
+  ) # Phyla with sites ordered by ph on top axis
+  #dev.off()
+
+  bac_ra_sediment <- subset_samples(bac_ra_phyla, TYPE == "S")
+  bac_ra_fluid <- subset_samples(bac_ra_phyla, TYPE == "F")
+  
+  
+
+             
+  inkspot(data.frame(t(otu_table(bac_ra_sediment))), cex.max = 8,
+          cex.axis = 0.3,
+          legend.values =NULL,
+          use.rank = F,
+          x.axis.top = F,
+          spec.names = get_taxa_unique(bac_ra_phyla, "Phyla"),
+          site.names = data.frame(sample_data(bac_ra_phyla))$X)
+  
+  inkspot(data.frame(t(otu_table(bac_ra_fluid))), cex.max = 8,
+          cex.axis = 0.3,
+          legend.values =NULL,
+          use.rank = F,
+          x.axis.top = F,
+          spec.names = get_taxa_unique(bac_ra_phyla, "Phyla"),
+          site.names = data.frame(sample_data(bac_ra_phyla))$X)
+  
+
+#heatmap
+plot_heatmap(bac_ra_phyla, method = "NMDS", distance = "bray",
+             sample.label = NULL, "Phyla" , low = "black",
+             high = "yellow", na.value = "black",
+             max.label = 100, title = NULL, sample.order = "TYPE",
+             taxa.order = , first.sample = NULL, first.taxa = NULL)
+
+## Adonis analysis on the beta diversity
+#can't do that without TREE
+### Test for factors difference in controlling beta diversity
+adonis(distance(bac_data_norm, method="wunifrac") ~ TYPE*year*long*lat*trech, data = data.frame(sample_data(bac_data_norm)), perm = 999)
+adonis(distance(bac_data_norm, method="unifrac") ~ type*plate*province*region*geol_prov*rocks*volcano*anions*cations, data = data.frame(sample_data(bac_data)), perm = 999)
+adonis(distance(bac_data_norm, method="jaccard") ~ type*plate*province*region*geol_prov*rocks*volcano*anions*cations, data = data.frame(sample_data(bac_data)), perm = 999)
+

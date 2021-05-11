@@ -1,37 +1,49 @@
 ![wetbench](https://img.shields.io/badge/TYPE-wet_bench-brigthgreen)
-![author](https://img.shields.io/badge/Monica_Correggia,_Matteo_Selci-ad7fa8)
+![author](https://img.shields.io/badge/AUTHOR-Monica_Correggia_and_Matteo_Selci-ad7fa8)
 ![created](https://img.shields.io/badge/created-07/07/2020-lightgray)
 [![giovannellilab](https://img.shields.io/badge/BY-Giovannelli_Lab-blue)](http://dgiovannelli.github.io)
 
-### **PROTOCOL FOR ANTIBIOGRAM TEST**
+<img src="https://dgiovannelli.github.io//images/logopic/giovannellilab.png" width="100 px">
 
- - McFarland protocol is adapted from https://pdf4pro.com/amp/view/mcfarland-standard-dalynn-f76d0.html
-- Antibiogram is adapted from Matuschek et al., 2014 (DOI: https://doi.org/10.1111/1469-0691.12373)
+# Antibiogram testing of pure strains
 
-**MATERIALS:**
+**OBJ**: Testing the sensibility or resistance of a pure strain to different antibiotics
+
+>***Duration: -***
+
+> ***Adapted from: McFarland et al.,  https://pdf4pro.com/amp/view/mcfarland-standard-dalynn-f76d0.html, and from Matuschek et al., 2014 (DOI: https://doi.org/10.1111/1469-0691.12373)***
+
+#### Materials
 - plate 90mm
 - falcon tube 15mL
 - couvette UV/VIS
 - Mueller Hinton media
 
-**EQUIPMENTS:**
+#### Equipment
 - dry incubator at 37°C
 - shaking incubator at 37°C
 - spectrophotometer UV/VIS
 - paper disks
 
-**SOLUTION:**
-- appropriate antibiotic
+#### Solutions
+- Antibiotic solutions to be tested with a working concentration
 
-**Procedure:**
-1. GLYCEROL STOCK ( -80°C) of your stain
-2. STREAK ON MUELLER HINTON AGAR PLATE (12h at 37°C-dry incubator)
-3. INOCULATE A SINGLE COLONY IN 5ML OF MUELLER HINTON LIQUID MEDIA (~12h at 37°C-shaking incubator). You need to know the hours passed between the starting of the inoculum and the lecture at the spectrophotometer
-4. READ THE OD625 nm VALUE AT SPECTROPHOTOMETER. Dilute the sample 1:10 (100µL of sample in 900µL of liquid media; 0.5 McFarland = 1 - 2 x 108 CFU/mL → OD = 0.08 - 0.1)
-5. DILUTE YOUR SAMPLE UNTIL YOU REACH AN  OD625nm VALUE COMPRISES BETWEEN 0.08 AND 0.1
-6. PREPARE PLATE WITH A BASE OF MUELLER HINTON AGAR 1.8% (10/15mL)
-7. ADD ON THE SURFACE 10mL OF MUELLER HINTON AGAR 0.7% WITH 1 mL OF YOUR SAMPLE (9mL of MH-A 0.7% + 1mL of sample + shaking)
-8. AFTER MEDIA SOLIDIFICATION, ADD PAPER DISKS AND WET WITH ANTIBIOTIC (LIQUID VOLUME REQUIRED FOR WET THE DISK IS 5µL)
-9. INCUBATE FOR 12h AT 37°C-dry incubator
-10. CHECK FOR HALO PRESENCE/ABSENCE OR MEASURE THE DIAMETER 
+## Procedure
+1. Glycerol stock (-80 °C) of your stain
+2. Streak on Mueller-Hinton agar plate (12h at 37 °C dry incubator)
+3. Inoculate a single colony in 5ml of mueller hinton liquid media (~12 h at 37 °C shaking incubator). you need to know the hours passed between the starting of the inoculum and the lecture at the spectrophotometer
+4. Read the OD 625 nm value at spectrophotometer. dilute the sample 1:10 (100 µL of sample in 900 µL of liquid media; 0.5 mcfarland = 1 - 2 x 10<sup>8</sup> CFU/mL → OD = 0.08 - 0.1)
+5. Dilute your sample until you reach an  OD 625 nm value comprises between 0.08 and 0.1
+6. Prepare plate with a base of Mueller-Hinton agar 1.8 % (10/15 mL)
+7. Add on the surface 10ml of mueller hinton agar 0.7 % with 1 mL of your sample (9 mL of MH agar 0.7 % + 1 mL of sample + shaking)
+8. After media solidification, add paper disks and wet with antibiotic (liquid volume required for wet the disk is 5 µL)
+9. Incubate for 12 h at 37 °C dry incubator
+10. Check for halo presence/absence or measure the diameter
 
+## Expected results (quantitative information, graphics, images)
+Describe the expected results and if possible include a visual example (i.e. a picture, table or graph)
+
+## Common problems, troubleshooting and solutions
+- List all common problems and solutions
+
+## Calculations

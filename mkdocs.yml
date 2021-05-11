@@ -3,8 +3,8 @@ site_description: 'Protocols used in the Giovannelli Lab'
 nav:
     - Giovannelli Lab Protocols: index.md
     - wet bench:
-        - DNA extraction from sediments: wetbench_molbiol_DNA_extraction_sediments.md
-        - Shark genomic DNA extraction: wetbench_molbiol_DNA_extraction_shark.md
+        - DNA extraction from sediments: wetbench_molbio_DNA_extraction_sediments.md
+        - Shark genomic DNA extraction: wetbench_molbio_DNA_extraction_shark.md
         - Antiobiogram test: wetbench_microbiol_antibiogram_protocol.md
         - Ammonia Nessler standard curve: wetbench_geochem_standard_curve_ammonia.md
         - Ammonia Nessler determination: wetbench_geochem_ammonia_determination.md

@@ -1,14 +1,13 @@
 ![wetbench](https://img.shields.io/badge/TYPE-wet_bench-brigthgreen)
-![author](https://img.shields.io/badge/Matteo_Selci,_Monica_Correggia-ad7fa8)
+![author](https://img.shields.io/badge/AUTHOR-Matteo_Selci_and_Monica_Correggia-ad7fa8)
 ![created](https://img.shields.io/badge/created-20/11/2020-lightgray)
 [![giovannellilab](https://img.shields.io/badge/BY-Giovannelli_Lab-blue)](http://dgiovannelli.github.io)
 
 # Calibration: Ammonia Determination (Nesslerization spectrophotometric method)
 
-Protocol objective.
-Calibration to determinate Ammonia concentration from a standard solution (NH4Cl).
->***Duration: 2 h***
->***Adapted from: *** www.irsa.cnr.it/Docs/Capitoli/4030.pdf
+Calibration to determinate Ammonia concentration from a standard solution (NH<sub>4</sub>Cl) with the Nessler reaction.
+>***Duration:*** 2 h
+>***Adapted from:*** [www.irsa.cnr.it/Docs/Capitoli/4030.pdf](www.irsa.cnr.it/Docs/Capitoli/4030.pdf)
 
 #### Materials
 - Cuvette (1 mL)

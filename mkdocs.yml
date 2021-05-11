@@ -13,8 +13,5 @@ nav:
     - in silico:
         - Metaproteomic processing: insilico_metaproteomic.md
 
-theme: readthedocs
-formats:
-  - html
-  - epub
-  - pdf
+theme: mkdocs
+formats: all

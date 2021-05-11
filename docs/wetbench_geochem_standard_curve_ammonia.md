@@ -2,8 +2,8 @@
 ![author](https://img.shields.io/badge/Matteo_Selci,_Monica_Correggia-ad7fa8)
 ![created](https://img.shields.io/badge/created-20/11/2020-lightgray)
 [![giovannellilab](https://img.shields.io/badge/BY-Giovannelli_Lab-blue)](http://dgiovannelli.github.io)
- 
-# Calibration: Ammonia Determination (Nesslerization spectrophotometric method) 
+
+# Calibration: Ammonia Determination (Nesslerization spectrophotometric method)
 
 Protocol objective.
 Calibration to determinate Ammonia concentration from a standard solution (NH4Cl).
@@ -21,14 +21,14 @@ Calibration to determinate Ammonia concentration from a standard solution (NH4Cl
 - Pipette 1000 uL and 100 uL
 
 #### Solutions
-- **Nessler reagent** (**TOXIC**) 
+- **Nessler reagent** (**TOXIC**)
 - Rochelle salt solution: the potassium sodium tartrate solution (1.8M)
 - Standard Solution: NH4Cl  
 ## Procedure
  1. Preparation of **Rochelle salt solution**:
 	- Add 50 g of Potassium Sodium Tartrate to 30 mL of deionized water and boil to remove ammonia trace. Once the solution is cold again, add deionized water until 100 mL.
 2. Preparation of the **Standard-1**:
-	- Dry NH4Cl during 1 hours in an oven at 105°C.
+	- Dry NH<sub>4</sub>Cl during 1 hours in an oven at 105 °C.
 	- Weight precisely 0.3819 g of NH4Cl.
 	- Add the 0.3819 g of NH4Cl in a glass bottle.
 	- Add deionized water until around 50 mL.
@@ -51,9 +51,10 @@ Cf (mg/L) | Cf (mg(mL) | SOL. B (mL) | Vf (mL)
 3 | 0.003 | 2.4 | 5.6
 3.5 | 0.0035 | 2.8 | 5.2
 4 | 0.004 | 3.2 | 4.8
+
 5. Take 1 mL from each **Standards-3** and transfer in the respective cuovette.
 6. Prepare the **BLANK**, adding 1 mL of deionized water in one couvette.
-7. Add to each couvette, 100 µL of **Rochelle salt solution**, 100 µL **Nessler Reagent** (**DO IT UNDER THE CHEMICAL HOOD**), cover all the couvett with silver paper, and wait 15 min. 
+7. Add to each couvette, 100 µL of **Rochelle salt solution**, 100 µL **Nessler Reagent** (**DO IT UNDER THE CHEMICAL HOOD**), cover all the couvett with silver paper, and wait 15 min.
 8. Set the spectrophotometer to 420 nm and use the BLANK sample to set  at zero the instrument.
 9. Measure all the samples noting the OD measured.
 10. Use the OD obtained to make the calibration curve.

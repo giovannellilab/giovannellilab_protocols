@@ -5,12 +5,12 @@ nav:
     - wet bench:
         - DNA extraction from sediments: wetbench_DNA_extraction_sediments.md
         - Antiobiogram test: wetbench_antibiogram_protocol.md
-        - Ammonia Standard Curve: wetbench_geochem_standard_curve_ammonia.md
-        - Ammonia Neissler determination: wetbench_geochem_ammonia_determination.md
+        - Ammonia Nessler standard curve: wetbench_geochem_standard_curve_ammonia.md
+        - Ammonia Nessler determination: wetbench_geochem_ammonia_determination.md
         - Total Prokaryotic numbers (FC): wetbench_TPN_sediments_flowcytometry.md
         - Total spores count sediments: wetbench_DPA_spores_sediments.md
     - in silico:
-        - Metaproteomic processing: insilico_metaproteomic.md  
-        
+        - Metaproteomic processing: insilico_metaproteomic.md
+
 theme: readthedocs
 formats: all

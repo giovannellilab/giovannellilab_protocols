@@ -10,6 +10,7 @@ nav:
         - Ammonia Nessler determination: wetbench_geochem_ammonia_determination.md
         - Total Prokaryotic numbers (FC): wetbench_TPN_sediments_flowcytometry.md
         - Total spores count sediments: wetbench_biochem_DPA_spores_sediments.md
+        - Compertent Cells CaCl2: wetbench_molbiol_competent_cells_CaCl2.md
     - in silico:
         - Metaproteomic processing: insilico_metaproteomic.md
 

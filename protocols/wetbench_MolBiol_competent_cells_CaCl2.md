@@ -35,16 +35,16 @@
 3. Inoculate 100mL of TY with the overnight culture for starting from OD600=0.1 
 4. Incubate at 37°C until OD600=0.4-0.6 (approx. 2h)
 5. Transfer in 2 falcon 50mL of the culture and place on ice for 30 min
-6. Centrifuge at 3.500 rpm for 10' at 4°C. disardthge supernatant.
-8. GENTLY resuspend the pellet in 50mL ofl CaCl2
-9. entrifuge at 3.500 rpm for 10' at 4°C. dischard thge rnatant
-10. GENTLY resuspend the pellet in 25m CaCl2. Mix the 2 cultures into a single 50mL falcon.
-11. ncubate on ice for 15'.
-21.Ccentrifuge at 3.500 rpm for 10' at 4°C. dishare the supesurnatant.
-13. esuspend the pellet GENTLY in 8.5mL of CaCl2 + 1.5mL Glycerol (1/10 of the initial volume).
-14. ncubate 60' on ice.
-54.Aaliquot 400μL  into sterile 1,5 mL tubes.
-16. tore at -80°C.
+6. Centrifuge at 3.500 rpm for 10' at 4°C. discharge supernatant.
+8. GENTLY resuspend the pellet in 50mL of CaCl2
+9. Centrifuge at 3.500 rpm for 10' at 4°C. discharge supernatant.
+10. GENTLY resuspend the pellet in 25mL CaCl2. Mix the 2 cultures into a single 50mL falcon.
+11. Incubate on ice for 15'.
+21. Centrifuge at 3.500 rpm for 10' at 4°C. discharge the supernatant.
+13. Resuspend the pellet GENTLY in 8.5mL of CaCl2 + 1.5mL Glycerol (1/10 of the initial volume).
+14. Incubate 60' on ice.
+54. Aliquot 400μL into sterile 1.5 mL tubes.
+16. Store at -80°C.
  
 ## Expected results (quantitative information, graphics, images)
 To test competent cell efficiency: transform an aliquote of competent cell with a plasmid carriyng a gene for antibiotic resistance

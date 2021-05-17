@@ -5,6 +5,7 @@ nav:
     - wet bench:
         - DNA extraction from sediments: wetbench_molbio_DNA_extraction_sediments.md
         - Shark genomic DNA extraction: wetbench_molbio_DNA_extraction_shark.md
+        - Miniprep: wetbench_molbiol_miniprep.md
         - Antiobiogram test: wetbench_microbiol_antibiogram_protocol.md
         - Ammonia Nessler standard curve: wetbench_geochem_standard_curve_ammonia.md
         - Ammonia Nessler determination: wetbench_geochem_ammonia_determination.md
